@@ -1,0 +1,52 @@
+{
+    "name": "defyma/go.defyma.com",
+    "description": "URL Shortener | defyma.com",
+    "keywords": ["url","shortener", "application", "php"],
+    "homepage": "https://github.com/defyma/go.defyma.com",
+    "type": "application",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/defyma/go.defyma.com/issues?state=open",
+        "source": "https://github.com/defyma/go.defyma.com"
+    },
+    "authors": [
+        {
+            "name": "Defy Muhammad Aminuddin",
+            "email": "defyma85@gmail.com",
+            "homepage": "https://defyma.com",
+            "role": "Owner"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "yiisoft/yii2": "~2.0.14"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    }
+}

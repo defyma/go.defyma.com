@@ -1,0 +1,14 @@
+/* TEAM */
+    Owner: Defy Muhammad Aminuddin.
+    Site: https://defyma.com.
+    Twitter: @defyma.
+    Location: Bandung, Indonesia.
+
+/* THANKS */
+    Github: https://github.com/briancray/PHP-URL-Shortener/blob/master/shorten.php
+
+/* SITE */
+    Last update: 2019/02/15
+    Standards: PHP
+    Framework: Yii2-minimal.
+    Software: Web Open Source for short URL
