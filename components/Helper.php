@@ -78,15 +78,6 @@ class Helper extends Component
         return $ipaddress;
     }
 
-    public static function encode($number) {
-        return strtr(rtrim(base64_encode(pack('i', $number)), '='), '+/', '-_');
-    }
-
-    public static function decode($base64) {
-        $number = unpack('i', base64_decode(str_pad(strtr($base64, '-_', '+/'), strlen($base64) % 4, '=')));
-        return $number[1];
-    }
-
     public static function getUniqueStringFromID($integer)
     {
         $base = 'SXhT9GA0guLwqm7z_Yne3vIZp5WJOb24kNa6B1M8EiCFPQfHxlrKtVURjcyD-sdo';
