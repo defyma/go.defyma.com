@@ -5,7 +5,8 @@
     Location: Bandung, Indonesia.
 
 /* THANKS */
-    Github: https://github.com/briancray/PHP-URL-Shortener/blob/master/shorten.php
+    Github: https://github.com/samdark/yii2-minimal
+    Github: https://github.com/briancray/PHP-URL-Shortener
 
 /* SITE */
     Last update: 2019/02/15
