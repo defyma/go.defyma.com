@@ -1,7 +1,5 @@
-URL Shortener Application
+URL Shortener Application | go.defyma.com
 ================================
-
-# go.defyma.com
 
 INSTALLATION
 ------------
