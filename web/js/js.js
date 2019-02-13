@@ -3,12 +3,13 @@ var GO_DEFYMA_COM = function (jQ, API_URL) {
     var setupAjax = () => {
         jQ.ajaxSetup({
             beforeSend: () => {
-                console.log('wait');
+                jQ("#loading").show();
             },
             complete: ()  => {
-                console.log('done');
+                jQ("#loading").hide();
             },
             error: (xhr, status, error) => {
+                jQ("#loading").hide();
                 Swal.fire({
                     html: xhr.statusText + " " + xhr.responseText,
                 });

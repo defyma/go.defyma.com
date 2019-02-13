@@ -31,6 +31,10 @@ use yii\widgets\Menu;
 </head>
 <body>
 <?php $this->beginBody() ?>
+    <div id="loading">
+        <img src="<?= Yii::$app->request->getBaseUrl() ?>/img/eclipse.svg">
+    </div>
+
     <nav>
         <div class="logo">
             <a href="https://go.defyma.com">
