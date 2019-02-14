@@ -51,8 +51,8 @@ var GO_DEFYMA_COM = function (jQ, API_URL) {
                             '<input id="result" class="result-link" type="text" value="'+result.link+'" readonly />' +
                             '<button type="button" class="copy-result">Copy</button>',
                     });
-                    jQ( ".copy-result" ).unbind( "click", copyResult );
-                    jQ( ".copy-result" ).bind( "click", copyResult );
+                    jQ( ".copy-result" ).unbind( "click", copyResult('result') );
+                    jQ( ".copy-result" ).bind( "click", copyResult('result') );
                     jQ(".input-box").val('');
                 } else {
                     swal.fire({
@@ -68,16 +68,26 @@ var GO_DEFYMA_COM = function (jQ, API_URL) {
         });
     }
 
-    var copyResult = () => {
-        var copyText = document.getElementById("result");
+    var copyResult = (el) => {
+        var copyText = document.getElementById(el);
         copyText.select();
         document.execCommand("copy");
+
+        toastr["success"]("Short URL copied");
     }
 
     return {
         init: () => {
             shorturl();
             setupAjax();
+        },
+
+        cp: (el) => {
+            var t = jQ("#input-url").val();
+            var e = jQ('#'+el).html();
+            jQ("#input-url").val(e);
+            copyResult('input-url');
+            jQ("#input-url").val(t);
         }
     }
 } (jQuery, 'https://go.defyma.com/url');

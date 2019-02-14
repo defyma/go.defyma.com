@@ -19,12 +19,51 @@ use yii\helpers\Url;
     ],
     'filterUrl' => ['/site'],
     'columns' => [
-        'short_url',
+        [
+            'attribute' => 'short_url',
+            'format' => 'raw',
+            'contentOptions' => [
+                'style' => 'max-width: 150px;'
+            ],
+            'value' => function($mdl) {
+                $hash = explode('/', $mdl->short_url);
+                $hash = end($hash);
+                return '
+                    <a id="'.$hash.'" href="https://'.$mdl->short_url.'" target="_blank">' . $mdl->short_url .'333</a>
+                ';
+            }
+        ],
+        [
+            'label' => '',
+            'format' => 'raw',
+            'contentOptions' => [
+                'style' => 'max-width: 30px;'
+            ],
+            'value' => function ($model) {
+                $hash = explode('/', $model->short_url);
+                $hash = end($hash);
+                return '
+                    <a href="javascript:void(0)" onclick="GO_DEFYMA_COM.cp(\''.$hash.'\')" title="copy">
+                        <img src="'.Yii::$app->request->getBaseUrl().'/img/cp.svg" style="width: 16px">
+                    </a>
+                ';
+            }
+        ],
         [
             'attribute' => 'created_date',
             'contentOptions' => ['class' => 'td-center']
         ],
-        'original_url',
+        [
+            'attribute' => 'original_url',
+            'contentOptions' => [
+                'style' => 'max-width: 300px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;'
+            ],
+            'format' => 'raw',
+            'value' => function($mdl) {
+                return '<a href="'.$mdl->original_url.'" target="_blank">' . $mdl->original_url .'</a>';
+            }
+        ],
+//        'original_url',
         [
             'attribute' => 'click',
             'contentOptions' => ['class' => 'td-center']

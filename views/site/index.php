@@ -12,7 +12,7 @@ $this->title = 'URL Shortener | defyma.com';
         <div class="tab__container">
             <pre class="nohighlight code">
             <code class="tab__pane active mac">
-                <input type="text" class="input-box" placeholder="Paste the URL to be shortened">
+                <input type="text" id="input-url" class="input-box" placeholder="Paste the URL to be shortened">
             </code>
             </pre>
             <button type="button" class="btn-short">Shorten URL</button>

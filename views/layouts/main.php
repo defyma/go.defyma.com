@@ -15,7 +15,7 @@ use yii\widgets\Menu;
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,6 +28,7 @@ use yii\widgets\Menu;
     <link rel="shortcut icon" href="<?= Yii::$app->request->getBaseUrl() ?>/favicon.ico">
     <meta name="keywords" content="defyma, save, share, shorten, short, shorturl, link" />
     <meta name="description" content="Get free & open source short URL from go.defyma.com" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <?php $this->head() ?>
 </head>
 <body>
@@ -55,6 +56,7 @@ use yii\widgets\Menu;
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript" src="<?= Yii::$app->request->getBaseUrl() ?>/js/query.js"></script>
     <script type="text/javascript" src="<?= Yii::$app->request->getBaseUrl() ?>/js/js.js"></script>
 
