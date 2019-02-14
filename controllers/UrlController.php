@@ -31,12 +31,14 @@ class UrlController extends Controller
                 'class' => \yii\filters\Cors::className(),
                 'cors' => [
                     'Origin' => ['*'],
-                    'Access-Control-Request-Method' => ['POST','GET', 'OPTIONS'],
-                    'Access-Control-Allow-Credentials' => true,
-                    'Access-Control-Max-Age' => 3600,
+                    'credentials' => true,
+                    'Access-Control-Request-Method' => ['POST', 'GET', 'OPTIONS'],
+                    'Access-Control-Request-Headers' => ['token'],
+//                    'Access-Control-Allow-Credentials' => true,
+                    'Access-Control-Max-Age' => 3600,                 // Cache (seconds)
+                    'token' => ''
                 ],
             ],
-
         ]);
     }
 
@@ -47,8 +49,7 @@ class UrlController extends Controller
 
         $req = Yii::$app->request;
         if (!$req->isPost && !$req->isGet) {
-            header("HTTP/1.0 405 Method Not Allowed");
-            die('Method Not Allowed');
+            die();
         }
 
         $type = $req->get('type', "");
