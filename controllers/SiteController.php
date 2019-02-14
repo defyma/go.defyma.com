@@ -36,9 +36,9 @@ class SiteController extends Controller
             throw new \yii\web\HttpException(404, 'Page Not Found');
         }
 
-        $search = THash::find()->where('hash = :hash', [
-            ':hash' => $hash
-        ])->one();
+        $search = THash::find()
+            ->where(['LIKE BINARY', 'hash', $hash])
+            ->one();
 
         if ($search) {
             $model = new TClick();
