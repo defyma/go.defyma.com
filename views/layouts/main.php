@@ -25,6 +25,7 @@ use yii\widgets\Menu;
     <link rel="stylesheet" href="<?= Yii::$app->request->getBaseUrl() ?>/css/site.css">
     <link rel="stylesheet" href="<?= Yii::$app->request->getBaseUrl() ?>/css/custom.css">
     <link rel="author" href="<?= Yii::$app->request->getBaseUrl() ?>/humans.txt">
+    <link rel="shortcut icon" href="<?= Yii::$app->request->getBaseUrl() ?>/favicon.ico">
     <meta name="keywords" content="defyma, save, share, shorten, short, shorturl, link" />
     <meta name="description" content="Get free & open source short URL from go.defyma.com" />
     <?php $this->head() ?>
