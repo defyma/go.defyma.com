@@ -29,7 +29,7 @@ use yii\helpers\Url;
                 $hash = explode('/', $mdl->short_url);
                 $hash = end($hash);
                 return '
-                    <a id="'.$hash.'" href="https://'.$mdl->short_url.'" target="_blank">' . $mdl->short_url .'333</a>
+                    <a id="'.$hash.'" href="https://'.$mdl->short_url.'" target="_blank">' . $mdl->short_url .'</a>
                 ';
             }
         ],
