@@ -23,5 +23,3 @@ composer.phar
 
 # Vagrant stores
 .vagrant
-
-config/db\.php
