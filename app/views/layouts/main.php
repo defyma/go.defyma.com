@@ -29,6 +29,9 @@ use yii\widgets\Menu;
     <meta name="keywords" content="defyma, save, share, shorten, short, shorturl, link" />
     <meta name="description" content="Get free & open source short URL from go.defyma.com" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script>
+        _API_URL_ = '<?=\yii\helpers\Url::base(true)?>/url';
+    </script>
     <?php $this->head() ?>
 </head>
 <body>

@@ -90,7 +90,7 @@ var GO_DEFYMA_COM = function (jQ, API_URL) {
             jQ("#input-url").val(t);
         }
     }
-} (jQuery, 'https://go.defyma.com/url');
+} (jQuery, _API_URL_);
 
 $(document).ready(() => {
    GO_DEFYMA_COM.init();
