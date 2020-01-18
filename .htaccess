@@ -1,12 +1,10 @@
-Options +FollowSymLinks
-IndexIgnore */*
+Options -Indexes
+# use mod_rewrite for pretty URL support
 RewriteEngine on
 
-# if request dosn't start with web add it
-RewriteCond %{REQUEST_URI} !^/(web)
-RewriteRule (.*) /web/$1
-
-# if file or directory dosn't exists go to /web/index.php
+# if a directory or a file exists, use it directly
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . web/index.php
+
+# otherwise forward it to index.php
+RewriteRule . index.php

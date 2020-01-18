@@ -80,8 +80,7 @@ class Helper extends Component
 
     public static function getUniqueStringFromID($integer)
     {
-        $base = 'd3FbXPU_-tHnKpjwA8GikSNsvZYc1hEz0T2QBDx5COJLWo6IV9gema4qyMR7f';
-
+        $base = 'nkdu4r71wcb6oaty08vz_fi3hsjgmzp9lq5e2';
         $length = strlen($base);
         $out = "";
         while($integer > $length - 1)

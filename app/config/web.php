@@ -6,6 +6,7 @@ $config = [
     'id' => 'minimal',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'vendorPath' => dirname(__DIR__) . "/../vendor",
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',

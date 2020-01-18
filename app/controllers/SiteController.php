@@ -2,12 +2,13 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\components\Helper;
 use app\models\TClick;
-use app\models\TLink;
 use app\models\THash;
+use app\models\TLink;
+use Yii;
 use yii\web\Controller;
+use yii\web\HttpException;
 
 class SiteController extends Controller
 {
@@ -30,14 +31,20 @@ class SiteController extends Controller
         ]);
     }
 
+    /**
+     * @param null $hash
+     * @throws HttpException
+     */
     public function actionGo($hash = null)
     {
         if (is_null($hash)) {
-            throw new \yii\web\HttpException(404, 'Page Not Found');
+            throw new HttpException(404, 'Page Not Found');
         }
 
         $search = THash::find()
-            ->where(['LIKE BINARY', 'hash', $hash])
+            ->where([
+                'hash' => $hash
+            ])
             ->one();
 
         if ($search) {
@@ -51,7 +58,7 @@ class SiteController extends Controller
             header("Location: " . $search->link->link, true, 301);
             die();
         } else {
-            throw new \yii\web\HttpException(404, 'Page Not Found');
+            throw new HttpException(404, 'Page Not Found');
         }
     }
 

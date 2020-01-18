@@ -24,4 +24,4 @@ composer.phar
 # Vagrant stores
 .vagrant
 
-composer\.lock
+app/runtime
